@@ -41,13 +41,15 @@ async function setUpLocalEnv() {
     }
 }
 
+
 async function getLatestServerDetails() {
     const headers: { Authorization: string } | {} = process.env.GITHUB_TOKEN
         ? { Authorization: `token ${process.env.GITHUB_TOKEN}` }
         : {}
 
+
     const response = await fetch(
-        'https://api.github.com/repos/httptoolkit/httptoolkit-server/releases/latest',
+        'https://api.github.com/repos/techtanic-htk/httptoolkit-server/releases/latest',
         { headers }
     );
     if (!response.ok) {
